@@ -42,6 +42,7 @@ const keyPress = (key) =>
             $('#life').attr("src",'img/hangman-${life}'+life+'.svg')
             if(life == 0){
                 console.log('player has lost');
+                
             }
         }
     }
