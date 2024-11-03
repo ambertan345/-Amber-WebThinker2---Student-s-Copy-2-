@@ -17,7 +17,7 @@ const keyPress = (key) =>
     if(guess.indexOf(key) == -1){
         //add the letter to guess list
         guess.push(key);
-        if(word.indexOf(key) != 1){
+        if(word.indexOf(key) != -1){
             $('#hint').html('');
             let found = true;
             // update the hint
@@ -48,7 +48,7 @@ const keyPress = (key) =>
 }
 
 
-const submitGuess = () =>
+const SubmitGuess = () =>
 {
     let guess = $('guessInput').val().toUpperCase();
     if(guess.length === 1 && /^[A-Z]$/.test(guess)){
@@ -63,6 +63,23 @@ const submitGuess = () =>
 }
 
 
-const newgame = () => {
-    
+const newGame = () => {
+    word = words[Math.floor(Math.random() * words.length)];
+    guess = [];
+    life = 7;
+
+    $('#hint').empty();
+    $('#incorrectGuesses').empty();
+    $('#life').attr("src", 'img/hangman-7.svg');
+
+    for (let i = 0; i < word.length; i++) {
+        if (word[i] === " ") {
+            $('#hint').append('<div> </div>'); // Append a space
+        } else {
+            $('#hint').append('<div>_</div>'); // Append an underscore
+        }
+    }
+};
 }
+
+$(document).ready(newGame);
