@@ -9,6 +9,23 @@
 	<link href="script/bootstrap.css" rel="stylesheet" />
 	<link href="script/hangman.css" rel="stylesheet" />
 	<link href="img/favicon-c3.png" rel="icon" />
+
+	<style>
+		.card{
+			display: inline-fles;
+			width: 30px;
+			height: 40px;
+			text-align: center;
+			align-items: center;
+			justify-content: center;
+			font-size: 24px;
+			border: 2px solid #333;
+			border-radius: 5px;
+			background-color: #f8f8f8;
+			box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+		}
+	</style>
+	
 </head>
 <body class="bg-secondary bg-opacity-10" style="min-width:320px">
 	<header>
@@ -37,6 +54,24 @@
 		</div>
 		<!-- Start of coding region -->
 		
+		<div class = "row">
+			<div class = "col">
+				<img id = "life" src = "img/hangman-7.svg" alt = "hangman">
+			</div>
+			<div class = "col">
+				<div id = "hint"> </div>
+				<div>
+					<p> Incorrect Guesses : <span id = "incorrectGuesses"></span> </p>
+				</div>
+				<div>
+					<input type = "text" id = "guessInput" maxlength = "1" placeholder = "Enter a letter">
+					<button onclick = "SubmitGuess()"> Submit </button>
+				</div>
+				<div>
+					<button onclick = "newGame()"> New Game </button>
+				</div>
+			</div>
+		</div>
 		<!-- End of coding region -->
 	</article>
 	<footer class="bg-dark text-light">
