@@ -34,6 +34,7 @@ const onCalcBMIPress = () => {
 	$('#results').html(' ');
 
 	$('#results').append("<p> Your BMI is: " + BMI.toFixed(1) + '</p>');
+<<<<<<< HEAD
 	console.log("test");
 
 	if (BMI < 18.50){
@@ -49,6 +50,27 @@ const onCalcBMIPress = () => {
 		$('results').addClass('bg-warning');
 	}
 	
+=======
+	if BMI < 18.5{
+		$('#results').append('<p class = "mb-0" > Hello Skinny, eat more to grow well! </p>')
+		$('results').addClass('bg-danger');
+	}
+	else if (BMI < 25){
+		$('#results').append('<p> Hello Healthy, you are doing well')
+		$('#results').addClass('bg-sucess');
+	}
+
+	else (BMI > 25){
+		$('#results').append('<p> Hello fatty wannabe, you should start shaking off with workout')
+		$('#results').addClass('bg-warning');
+	}
+
+
+
+
+
+	$('#results').append('<p class = "mb-0" > Hello Skinny, eat more to grow well! </p>')
+>>>>>>> 2a3bc8b (git fetch origin)
 
 
 
